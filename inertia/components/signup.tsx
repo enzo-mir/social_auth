@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebookF, faGooglePlusG, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+
 function SignUpForm() {
   const [state, setState] = React.useState({
     name: "",
@@ -35,14 +38,14 @@ function SignUpForm() {
         <h1>Create Account</h1>
         <div className="social-container">
           <a href="#" className="social">
-            <i className="fab fa-facebook-f" />
-          </a>
-          <a href="#" className="social">
-            <i className="fab fa-google-plus-g" />
-          </a>
-          <a href="#" className="social">
-            <i className="fab fa-linkedin-in" />
-          </a>
+                <FontAwesomeIcon icon={faFacebookF} />
+              </a>
+              <a href="#" className="social">
+                <FontAwesomeIcon icon={faGooglePlusG} />
+              </a>
+              <a href="#" className="social">
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </a>
         </div>
         <span>or use your email for registration</span>
         <input
