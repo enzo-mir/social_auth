@@ -1,51 +1,50 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebookF, faGooglePlusG, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDiscord, faGooglePlusG, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { Link } from '@inertiajs/react'
 
 function SignUpForm() {
   const [state, setState] = React.useState({
-    name: "",
-    email: "",
-    password: ""
-  });
-  const handleChange = (evt:React.ChangeEvent<HTMLInputElement>) => {
-    const value = evt.target.value;
+    name: '',
+    email: '',
+    password: '',
+  })
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    const value = evt.target.value
     setState({
       ...state,
-      [evt.target.name]: value
-    });
-  };
+      [evt.target.name]: value,
+    })
+  }
 
-  const handleOnSubmit = (evt:React.FormEvent) => {
-    evt.preventDefault();
+  const handleOnSubmit = (evt: React.FormEvent) => {
+    evt.preventDefault()
 
-    const { name, email, password } = state;
-    alert(
-      `You are sign up with name: ${name} email: ${email} and password: ${password}`
-    );
+    const { name, email, password } = state
+    alert(`You are sign up with name: ${name} email: ${email} and password: ${password}`)
 
     for (const key in state) {
       setState({
         ...state,
-        [key]: ""
-      });
+        [key]: '',
+      })
     }
-  };
+  }
 
   return (
     <div className="form-container sign-up-container">
       <form onSubmit={handleOnSubmit}>
         <h1>Create Account</h1>
         <div className="social-container">
-          <a href="#" className="social">
-                <FontAwesomeIcon icon={faFacebookF} />
-              </a>
-              <a href="#" className="social">
-                <FontAwesomeIcon icon={faGooglePlusG} />
-              </a>
-              <a href="#" className="social">
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
+          <a href="/discord/redirect" className="social">
+            <FontAwesomeIcon icon={faDiscord} />
+          </a>
+          <a href="/google/redirect" className="social">
+            <FontAwesomeIcon icon={faGooglePlusG} />
+          </a>
+          <a href="/github/redirect" className="social">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </div>
         <span>or use your email for registration</span>
         <input
@@ -72,7 +71,7 @@ function SignUpForm() {
         <button>Sign Up</button>
       </form>
     </div>
-  );
+  )
 }
 
-export default SignUpForm;
+export default SignUpForm

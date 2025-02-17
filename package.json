@@ -73,6 +73,7 @@
     "edge.js": "^6.2.1",
     "luxon": "^3.5.0",
     "mysql2": "^3.12.0",
+    "prettier-edgejs": "^0.2.35",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fontawesome": "^1.7.1",

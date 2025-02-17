@@ -1,18 +1,17 @@
-import  React, { useState } from "react";
-import "../css/app.css";
-import SignInForm from "~/components/signin";
-import SignUpForm from "~/components/signup";
+import React, { useState } from 'react'
+import '../css/app.css'
+import SignInForm from '~/components/signin'
+import SignUpForm from '~/components/signup'
 
 export default function Home() {
-  const [type, setType] = useState("signIn");
-  const handleOnClick = (text:"signIn" | "signUp") => {
+  const [type, setType] = useState('signIn')
+  const handleOnClick = (text: 'signIn' | 'signUp') => {
     if (text !== type) {
-      setType(text);
-      return;
+      setType(text)
+      return
     }
-  };
-  const containerClass =
-    "container " + (type === "signUp" ? "right-panel-active" : "");
+  }
+  const containerClass = 'container ' + (type === 'signUp' ? 'right-panel-active' : '')
   return (
     <div className="App">
       <h2>Sign in/up Form</h2>
@@ -23,25 +22,15 @@ export default function Home() {
           <div className="overlay">
             <div className="overlay-panel overlay-left">
               <h1>Welcome Back!</h1>
-              <p>
-                To keep connected with us please login with your personal info
-              </p>
-              <button
-                className="ghost"
-                id="signIn"
-                onClick={() => handleOnClick("signIn")}
-              >
+              <p>To keep connected with us please login with your personal info</p>
+              <button className="ghost" id="signIn" onClick={() => handleOnClick('signIn')}>
                 Sign In
               </button>
             </div>
             <div className="overlay-panel overlay-right">
               <h1>Hello, Friend!</h1>
               <p>Enter your personal details and start journey with us</p>
-              <button
-                className="ghost "
-                id="signUp"
-                onClick={() => handleOnClick("signUp")}
-              >
+              <button className="ghost " id="signUp" onClick={() => handleOnClick('signUp')}>
                 Sign Up
               </button>
             </div>
@@ -49,5 +38,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  );
+  )
 }
